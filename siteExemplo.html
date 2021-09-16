@@ -7,7 +7,15 @@
     <title>SiteExemplo</title>
 </head>
 <body>
-    Olá Mundo!
-    
+    <script type="text/javascript">
+        function login() {
+            var nome = prompt('Qual seu nome?','Zé ninguém');
+            resultado.innerHTML = 'Olá, ' + nome.toUpperCase() + '.';
+        }
+    </script>
+    <h1>Identificação</h1>
+    <input type="buton" value = "Faça o Login"
+    onclick="login()">
+    <div id="resultado"><br></div>
 </body>
 </html>
