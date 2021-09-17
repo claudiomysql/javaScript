@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de Controle</title>
+</head>
+<body>
+    <script>
+        // IF
+        function validarNumero() {
+            var x = prompt("Informe um número");
+            if (x < 5){
+                alert(x + " é menor que 5");
+                document.write("Foi informado o número " + x + " que é menor que 5.");
+            }
+            else if (x > 5){
+                alert(x + " é maior que 5");
+                document.write("Foi informado o número " + x + " que é maior que 5.");
+            }
+            else {
+                alert(x + " é igual a 5");
+                document.write("Foi infromado o número " + x + " que é igual a 5");
+            }
+        }
+
+        //Switch
+        function getDiaSemana() {
+            var hoje = new Date();
+            var diaSemana = hoje.getDay();
+            var nomeDiaSemana = "";
+            switch(diaSemana) {
+                case 0: 
+                    nomeDiaSemana = "Domingo";
+                    alert("Hoje é Domingo");
+                    break;
+
+                case 1:
+                    nomeDiaSemana = "Segunda";
+                    alert("Hoje é Segunda");
+                    break;
+
+                case 2:
+                    nomeDiaSemana = "Terça";
+                    alert("Hoje é Terça");
+                    break;
+
+                case 3:
+                    nomeDiaSemana = "Quarta";
+                    alert("Hoje é Quarta");
+                    break;
+                
+                case 4:
+                    nomeDiaSemana = "Quinta";
+                    alert("Hoje é Quinta");
+                    break;
+
+                case 5: 
+                    nomeDiaSemana = "Sexta";
+                    alert("Hoje é Sexta");
+                    break;
+
+                case 6: 
+                    nomeDiaSemana = "Sábado";
+                    alert("Hoje é Sábado");
+                    break;
+            }
+            document.write("Hoje é " + nomeDiaSemana + '!')
+        }
+
+        // For
+        function contadorFor() {
+            alert("Contador FOR");
+            alert("Contando... ");
+            for (var i = 0; i <= 5; i++) {
+                alert(i);
+                document.write(i + "<br>");
+            }
+        }
+
+        // while
+        function contadorWhile(){
+            var i = 0;
+            alert("Contador WHILE");
+            alert("Contando... ");
+            while (i <= 5) {
+                alert(i);
+                document.write(i + "<br>");
+                i++;
+            }
+
+        } 
+
+        // Do while
+        function contadorDoWhile(){
+            var i = 0;
+            alert("Contando... ");
+            do {
+                alert(i);
+                document.write(i + "<br>");
+                i = i + 5;
+            }
+            while (i <= 10);
+        }
+    </script>
+    <h1>Estruturas de Controle</h1>
+    <h5>Clique em um dos botões para execução:</h5>
+    <button type="button" onclick = "validarNumero()">IF</button> >> Use o botão IF<br>
+    <button type="button" onclick="getDiaSemana()">SWITCH</button> >> Use o botão Switch<br>
+    <button type="button" onclick = "contadorFor()">Contador For</button> >> Use o botão For<br>
+    <button type="button" onclick = "contadorWhile()">Contador While</button> >> Use o botão While<br>
+    <button type="button" onclick = "contadorDoWhile()">Contador Do While</button> >> Use o botão Do While<br>
+</body>
+</html>
