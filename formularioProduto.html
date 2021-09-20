@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Produtos</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function validarDescricao() {
+            if (desc.value.trim() === '') {
+                desc.style.background = 'red';
+                alert('Preencha a descrição.')
+                return false;
+            }
+                else {
+                    desc.style.background = 'white';
+                    return true
+                } 
+        }
+
+        function validarQuantidade() {
+            var erro = false;
+            if (qtd.value.trim() === '') {
+                erro = true;
+            }
+            else {
+                if (isNaN(qtd.value) === true) {
+                    erro = true;
+                }
+                else {
+                    var nQtd = parseInt(qtd.value);
+                    if (nQtd < 1 || nQtd > 999) {
+                       erro = true;
+                    }
+                }
+            }
+            if (erro === true) {
+                qtd.style.background = 'yellow';
+                alert('A quantidade deve ser um número entre 1 e 999.')
+            }
+            else {
+                qtd.style.background = 'white';
+                
+            }
+            return (!erro)
+        }
+
+        function validarPreco() {
+            var erro = false;
+            if (preco.value.trim() === '') {
+                erro = true;
+            }
+                else {
+                    if (isNaN(preco.value) === true) {
+                        erro = true;
+                    }
+                        else {
+                            var nPreco = parseFloat(preco.value);
+                            if (nPreco <= 0.0) {
+                                erro = true;
+                            }
+                                else {
+                                    preco.value = nPreco.toFixed(2);
+                                } 
+                        }
+                }
+                if (erro === true) {
+                        preco.style.background = 'yellow';
+                        alert('O preço unitário deve ser um número maior que zero.')
+                    }
+                        else {
+                            preco.style.background = 'white';
+                        }
+            return (!erro);
+            }
+
+        function calcular() {
+            if (validarDescricao() && validarQuantidade() && validarPreco()) {
+                var nTotal = parseFloat(preco.value) * parseInt(qtd.value);
+                total.value = nTotal.toFixed(2);
+            }
+        }
+    </script>
+    <h1>Produtos</h1>
+    <table border="0">
+        <tr>
+            <td align="right">Descrição</td>
+            <td><input type="text" id="desc" value="" size="20" maxlength="20" onblur="validarDescricao()"></td>
+        </tr>
+        <tr>
+            <td align="right">Quantidade</td>
+            <td><input type="text" id="qtd" value="" size="3" maxlength="3" onblur="validarQuantidade()"></td>
+        </tr>
+        <tr>
+            <td align="right">Preço Unitário</td>
+            <td><input type="text" id="preco" value="" size="10" maxlength="10" onblur="validarPreco()"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Calcular" onclick="calcular()"></td>
+        </tr>
+        <tr>
+            <td align="right">Preço Total</td>
+            <td><input type="text" id="total" value="" size="10" maxlength="10" readonly></td>
+        </tr>
+    </table>
+</body>
+</html>

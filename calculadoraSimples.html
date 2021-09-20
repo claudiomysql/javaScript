@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadoras</title>
+</head>
+<body>
+    <script type="text/javascript">
+    // Funções individuais para Primeira Calculadora
+        function somar() {
+            res.value = parseFloat(v1.value) + parseFloat(v2.value);
+        }
+
+        function subtrair() {
+            res.value = parseFloat(v1.value) - parseFloat(v2.value);
+        }
+
+        function multiplicar() {
+            res.value = parseFloat(v1.value) * parseFloat(v2.value);
+        }
+
+        function dividir()  {
+            if  (parseFloat(v1.value) === 0)
+                res.value = "Error valor 1!";
+            else if (parseFloat(v2.value) === 0)
+                res.value = "Error valor 2";
+            else
+                res.value = parseFloat(v1.value) / parseFloat(v2.value);
+        }
+    
+        // Segunda Calculadora
+        function calcular(op) {
+            if (op === '+')
+                result.value = parseFloat(segV1.value) + parseFloat(segV2.value);
+            else if (op === '-')
+                result.value = parseFloat(segV1.value) - parseFloat(segV2.value);
+            else if (op === '*')
+                result.value = parseFloat(segV1.value) * parseFloat(segV2.value);
+            else {
+                if (parseFloat(segV2.value) === 0 || parseFloat(segV1.value) === 0)
+                    result.value = "Error! Divisão por zero";
+                else 
+                    result.value = parseFloat(segV1.value) / parseFloat(segV2.value);
+            }
+        }
+    
+        // Terceira Calculadora
+        function calcularChecked() {
+            if  (parseFloat(tercV1.value) === 0 || parseFloat(tercV2.value) === 0)
+                    tercRes.value = "Error!";
+            else {
+                if (tercSomar.checked === true)
+                    tercRes.value = parseFloat(tercV1.value) + parseFloat(tercV2.value);
+                else if (tercSubtrair.checked === true)
+                    tercRes.value = parseFloat(tercV1.value) - parseFloat(tercV2.value);
+                else if (tercMultiplicar.checked === true)
+                    tercRes.value = parseFloat(tercV1.value) * parseFloat(tercV2.value);
+                else {
+                    tercRes.value = parseFloat(tercV1.value) / parseFloat(tercV2.value);
+                }
+                }
+        }
+
+        // Quarta Calculadora
+        function calcularSelected() {
+            if (parseFloat(quartV1.value) === 0 || parseFloat(quartV2.value) === 0)
+                alert("Error!");
+                else {
+                    if (quartOp.value === "soma")
+                        quartRes.value = parseFloat(quartV1.value) + parseFloat(quartV2.value);
+                    else if (quartOp.value === "sub")
+                        quartRes.value = parseFloat(quartV1.value) - parseFloat(quartV2.value);
+                    else if (quartOp.value === "mult")
+                        quartRes.value = parseFloat(quartV1.value) * parseFloat(quartV2.value);
+                    else if (quartOp.value === "div")
+                        quartRes.value = parseFloat(quartV1.value) / parseFloat(quartV2.value);
+                    else
+                        alert("Escolha uma operação")
+                }
+        }
+
+
+    </script>
+    <h1>Primeira Calculadora</h1>
+    Valor 1: <input type="text" id="v1" value="0"><br>
+    Valor 2: <input type="text" id="v2" value="0"><br>
+    <input type="button" value="Somar" onclick="somar()">
+    <input type="button" value="Subtrair" onclick="subtrair()">
+    <input type="button" value="Multiplicar" onclick="multiplicar()">
+    <input type="button" value="Dividir" onclick="dividir()"><br>
+    Resultado: <input type="text" id="res" value="0" readonly>
+
+    <h1>Segunda Calculadora</h1>
+    Valor 1: <input type="text" id="segV1" value="0"><br>
+    Valor 2: <input type="text" id="segV2" value="0"><br>
+    <input type="button" value="Somar" onclick="calcular('+')">
+    <input type="button" value="Subtrair" onclick="calcular('-')">
+    <input type="button" value="Multiplicar" onclick="calcular('*')">
+    <input type="button" value="Dividir" onclick="calcular('/')"><br>
+    Resultado: <input type="text" id="result" value="0" readonly>
+
+    <h1>Terceira Calculadora</h1>
+    Valor 1: <input type="text" id="tercV1" value="0"><br>
+    Valor 2: <input type="text" id="tercV2" value="0"><br>
+    Operação:
+    <input type="radio" id="tercSomar" name="op"> Somar 
+    <input type="radio" id="tercSubtrair" name="op"> Subtrair
+    <input type="radio" id="tercMultiplicar" name="op"> Multiplicar
+    <input type="radio" id="tercDividir" name="op"> Dividir <br>
+    <input type="button" value="Executar" onclick="calcularChecked()"><br>
+    <input type="text" id="tercRes" value="0" readonly>
+
+    <h1>Quarta Calculadora</h1>
+    Valor 1: <input type="text" id="quartV1" value="0"><br>
+    Valor 2: <input type="text" id="quartV2" value="0"><br>
+    Resultado:<input type="text" id="quartRes" value="0" readonly><br>
+    <select name="quartOp" id="quartOp">
+        <option value=" ">(Escolha uma opção)</option>
+        <option value="soma">Somar</option>
+        <option value="sub">Subtrair</option>
+        <option value="mult">Multiplicar</option>
+        <option value="div">Dividir</option>
+    </select><br>
+    <input type="button" value="Executar" onclick="calcularSelected()">
+    <input type="reset" value="Cancelar" 
+    onclick="document.getElementById('quartV1').value = '' ,
+            document.getElementById('quartV2').value = '',
+            document.getElementById('quartOp').value = ' ',
+            document.getElementById('quartRes').value = ''"><br>
+    
+</body>
+</html>

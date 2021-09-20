@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática Calculadora</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function validarValores() {
+            if (parseFloat(vl1.value) === 0) {
+                vl1.style.background = "red";            
+                return false;
+            }
+            else if (parseFloat(vl2.value) === 0) {
+                    vl1.style.background = "white";
+                    vl2.style.background = "red";            
+                    return false;
+                }
+            else {
+                vl1.style.background = "white";
+                vl2.style.background = "white";
+                return true;
+            }
+        }
+
+        function calcular() {
+            if (validarValores()) {
+                if (op.value === '+')
+                    result.value = parseFloat(vl1.value) + parseFloat(vl2.value);
+                else if (op.value === '-')
+                    result.value = parseFloat(vl1.value) - parseFloat(vl2.value);
+                else if (op.value === '*')
+                    result.value = parseFloat(vl1.value) * parseFloat(vl2.value);
+                else if (op.value === '/')
+                    result.value = parseFloat(vl1.value) / parseFloat(vl2.value);
+                
+                    // Tratmento de erro caso não selecione uma operação
+                else 
+                    alert('Selecione uma operação!')
+            }
+        }
+    </script>
+    <h1>Calculadora:</h1>
+    <h5>
+        Valor 1: <input type="text" id="vl1" value="0" onblur="validarValores()"> <br>
+        Valor 2: <input type="text" id="vl2" value="0" onblur="validarValores()"><br>
+        Resultado: <input type="text" id="result"><br>
+        <!--Botão para selecionar uma operação-->
+        Operação: <select id="op">
+            <option value="">(Escolha uma opção)</option>
+            <option value="+">Soma</option>
+            <option value="-">Subtração</option>
+            <option value="*">Multiplicação</option>
+            <option value="/">Divisão</option>
+        </select><br>
+        <!--Botão pra executar a função calcular-->
+        <input type="button" value="Executar" onclick="calcular()" readonly>
+        <!--Botão para resetar os valores informaods-->
+        <input type="button" value="Reset" 
+            onclick="document.getElementById('vl1').value='0',
+                    document.getElementById('vl2').value='0',
+                    document.getElementById('result').value='0'">
+    </h5>
+</body>
+</html>
