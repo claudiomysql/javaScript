@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Java Script 1</title>
+</head>
+<body>
+    <script>
+        function validarNumber1() {
+            if (isNaN(number1.value) === true || number1.value === '') {
+                document.getElementById('number1').style.background = "yellow";
+                console.log('erro');
+                return false;
+            }
+            else
+                    document.getElementById('number1').style.background = "gray";
+                    console.log('success');
+                    return true;
+
+        }
+        function validarNumber2() {
+            if (isNaN(number2.value) === true || number2.value === '') {
+                document.getElementById('number2').style.background = "yellow";
+                console.log('erro');
+                return false;
+            }
+            else
+                    document.getElementById('number2').style.background = "gray";
+                    console.log('success');
+                    return true;
+
+        }
+
+        function validarNumber3() {
+            if (isNaN(number3.value) === true || number3.value === '') {
+                document.getElementById('number3').style.background = "yellow";
+                console.log('erro');
+                return false;
+            }
+            else
+                    document.getElementById('number3').style.background = "gray";
+                    console.log('success');
+                    return true;
+
+        }
+
+        function validarNumber4() {
+            if (isNaN(number4.value) === true || number4.value === '') {
+                document.getElementById('number4').style.background = "yellow";
+                console.log('erro');
+                return false;
+            }
+            else
+                    document.getElementById('number4').style.background = "gray";
+                    console.log('success');
+                    return true;
+
+        }
+
+
+        function media() {
+            if (validarNumber1() && validarNumber2() && validarNumber3() && validarNumber4() ) {
+                res.value = (
+                                parseFloat(number1.value) +
+                                parseFloat(number2.value) +
+                                parseFloat(number3.value) +
+                                parseFloat(number4.value)
+                                ) / 4;
+            }
+                else
+                    alert('Reveja os valores informados');
+        }
+    </script>
+    Informe os números: <br>
+    Número 1: <input type="text" id="number1" value="" onblur="validarNumber1()"><br>
+    Número 2: <input type="text" id="number2" value="" onblur="validarNumber2()"><br>
+    Número 3: <input type="text" id="number3" value="" onblur="validarNumber3()"><br>
+    Número 4: <input type="text" id="number4" value="" onblur="validarNumber4()"><br> 
+    Média dos dados: <input type="text" id="res" value="" readonly><br>
+    <input type="button" id="Calc" value="Calc" onclick="media()"> 
+    <input type="button" id="reset" value="Reset" 
+    onclick="document.getElementById('number1').value ='',
+                document.getElementById('number1').style.background = 'white',
+                document.getElementById('number2').value ='',
+                document.getElementById('number2').style.background = 'white',
+                document.getElementById('number3').value ='',
+                document.getElementById('number3').style.background = 'white',
+                document.getElementById('number4').value ='',
+                document.getElementById('number4').style.background = 'white',
+                document.getElementById('res').value =''">
+   
+</body>
+</html>

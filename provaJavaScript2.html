@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Java Script 2</title>
+</head>
+<body>
+    <script type="text/javascript" src="prova2.js"></script>
+    <h1>Informe o Produto</h1>
+    <div id="prod">
+    Produto: <input type="text" id="produto" size="50" value=""
+    onblur="validarProduto() ">
+</div><br>
+<div id="unitario">
+    Valor Unitário: <input type="text" id="valorun" size="20" value="" 
+    onblur="validarUnitario()">
+</div><br>
+<div id="quantidade">
+    Quantidade: <input type="text" id="qtd" size="10" value="0" 
+    onblur="validarQtd()"><br>
+</div>
+    Total: <input type="text" id="total" size="10" value="0" readonly> <br>
+    <input type="button" value="Calcular" id="calc" 
+    onclick="calcular()">
+    <input type="button" value="Resetar" id="reset" 
+    onclick="resetar()">
+    
+</body>
+</html>

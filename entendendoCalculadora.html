@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function digito(dig) {
+            if (result.value === '0') 
+                result.value = dig
+            else
+                result.value = result.value + dig;
+        }
+
+        function limpar() {
+            document.getElementById('result').value = '0'
+        }
+
+        function separador() {
+            result.value = result.value + '.';
+        }
+
+        function operacao(ope) {
+            v1.value = result.value;
+            op.value = ope;
+            result.value = "0";
+           
+        }
+
+        function totalizador() {
+           if (op.value === "+")
+                result.value = parseFloat(v1.value) + parseFloat(result.value);
+            else if (op.value === "-")
+                result.value = parseFloat(v1.value) - parseFloat(result.value);
+            else if (op.value === 'x') 
+                result.value = parseFloat(v1.value) * parseFloat(result.value);
+            else if (op.value === "/")
+                result.value = parseFloat(v1.value) / parseFloat(result.value);
+        }
+
+    </script>
+    <h1>Calculadora</h1>
+    
+    <table bgcolor="#BBBBBB" border="0" cellpading="3" cellspacing="0" sumary="">
+        <tr>    
+            <td colspan="4">
+                <input type="text" id="result" value="0" size="20" readonly><br>
+                <input type="hidden" id="v1" value="0">
+                <input type="hidden" id="op" value=" ">
+                <input type="button" id="limp" value="  C  " onclick="limpar()"><br>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" id="dig7" value="  7  " onclick="digito('7')"></td>
+            <td><input type="button" id="dig8" value="  8  " onclick="digito('8')"></td>
+            <td><input type="button" id="dig9" value="  9  " onclick="digito('9')"></td>
+            <td><input type="button" id="opDiv" value="    /  " onclick="operacao('/')"></td>
+        </tr>
+        <tr>
+           <td><input type="button" id="dig4" value="  4  " onclick="digito('4')"></td>
+           <td><input type="button" id="dig5" value="  5  " onclick="digito('5')"></td>
+           <td><input type="button" id="dig6" value="  6  " onclick="digito('6')"></td>
+           <td><input type="button" id="opMul" value="    X " onclick="operacao('x')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="dig1" value="  1  " onclick="digito('1')"></td>
+            <td><input type="button" id="dig2" value="  2  " onclick="digito('2')"></td>
+            <td><input type="button" id="dig3" value="  3  " onclick="digito('3')"></td>
+            <td><input type="button" id="opSub" value="    -  " onclick="operacao('-')"></td>
+         </tr>
+         <tr>
+            <td><input type="button" id="separador" value="  .  " onclick="separador()"></td>
+            <td><input type="button" id="dig0" value="  0  " onclick="digito('0')"></td>
+            <td><input type="button" id="total" value="  =  " onclick="totalizador()"></td>
+            <td><input type="button" id="opAdi" value="    + " onclick="operacao('+')"></td>
+         </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+</head>
+<body>
+    <script src="./calc.js"></script>
+    <h3>Calculadora</h3>
+    <input type="text" id="result" value="0" size="12" readonly><br>
+    <input type="button" id="resetar" value="Reset" onclick="resetar()">
+    <input type="button" id="off" value="Off" onclick="retornar()">
+    <input type="hidden" id="valor1" value="0" >
+    <input type="hidden" id="ope" value=" " >
+    <input type="hidden" id="totalOp" value="" ><br>
+    <input type="button" id="dig7" value=" 7" onclick="digitar('7')">
+    <input type="button" id="dig8" value=" 8" onclick="digitar('8')">
+    <input type="button" id="dig9" value=" 9" onclick="digitar('9')">
+    <input type="button" id="opDiv" value=" /" onclick="operacao('/')"><br>
+    <input type="button" id="dig4" value=" 4" onclick="digitar('4')">
+    <input type="button" id="dig5" value=" 5" onclick="digitar('5')">
+    <input type="button" id="dig6" value=" 6" onclick="digitar('6')">
+    <input type="button" id="opSub" value=" -" onclick="operacao('-')"><br>
+    <input type="button" id="dig1" value=" 1" onclick="digitar('1')">
+    <input type="button" id="dig2" value=" 2" onclick="digitar('2')">
+    <input type="button" id="dig3" value=" 3" onclick="digitar('3')">
+    <input type="button" id="opMult" value=" x" onclick="operacao('x')"><br>
+    <input type="button" id="ponto" value="  ." onclick="separador()">
+    <input type="button" id="dig0" value=" 0" onclick="digitar('0')">
+    <input type="button" id="totalizador" value="=" onclick="totalizador()">
+    <input type="button" id="opAdi" value=" +" onclick="operacao('+')"><br>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript" src="./produto.js"></script>
+    <h1>Produtos</h1>
+    Descrição: <input type="text" id="descricao" value="" onblur="validarDescricao()"><br>
+    Quantidade: <input type="text" id="qtd" value="" onblur="validarQtd()"><br>
+    Preço Unitário: <input type="text" id="precoUn" value="" onblur="validarPrecoUn()"><br>
+    <input type="button" value="Executar" onclick="calcular()"><br>
+    Valor Total: <input type="text" id="total" value="" readonly ><br>
+    <input type="button" value="Reset" 
+    onclick="document.getElementById('descricao').value = '',
+            document.getElementById('descricao').style.background = '',
+            document.getElementById('descricao').style.color = 'black',
+            document.getElementById('qtd').value = '',
+            document.getElementById('qtd').style.background = '',
+            document.getElementById('precoUn').value = '',
+            document.getElementById('precoUn').style.background = '',
+            document.getElementById('total').value = ''
+            document.getElementById('total').style.background = '',
+            document.getElementById('total').style.color = 'black'">
+</body>
+</html>
